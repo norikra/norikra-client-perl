@@ -53,5 +53,16 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tagomoris/p5-Norikra-Client/issues"
+      },
+      "homepage" : "https://github.com/tagomoris/p5-Norikra-Client",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/tagomoris/p5-Norikra-Client.git",
+         "web" : "https://github.com/tagomoris/p5-Norikra-Client"
+      }
+   },
    "version" : "0.01"
 }
