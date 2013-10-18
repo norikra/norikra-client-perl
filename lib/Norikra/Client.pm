@@ -3,6 +3,7 @@ use 5.008005;
 use strict;
 use warnings;
 
+use Data::MessagePack;
 use MessagePack::RPC::HTTP::Client;
 
 our $VERSION = "0.01";
@@ -26,13 +27,19 @@ sub targets {
 }
 
 sub open {
-    my ($self, $target, $fields) = @_;
-    $self->client->call("open", $target, $fields);
+    my ($self, $target, $fields, $auto_field) = @_;
+    $auto_field = 1 unless defined $auto_field;
+    $self->client->call("open", $target, $fields, ($auto_field ? Data::MessagePack::true() : Data::MessagePack::false() ));
 }
 
 sub close {
     my ($self, $target) = @_;
     $self->client->call("close", $target);
+}
+
+sub modify {
+    my ($self, $target, $auto_field) = @_;
+    $self->client->call("modify", $target, ($auto_field ? Data::MessagePack::true() : Data::MessagePack::false() ));
 }
 
 sub queries {
