@@ -6,7 +6,7 @@ use warnings;
 use Data::MessagePack;
 use MessagePack::RPC::HTTP::Client;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 my $RPC_DEFAULT_PORT = 26571;
 
