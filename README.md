@@ -40,12 +40,12 @@ Norikra::Client - Client library for Norikra (https://github.com/tagomoris/norik
     $client->fields($targets->[0]);
     # $VAR1 = [
     #           {
-    #             'type' => 'long',
+    #             'type' => 'integer',
     #             'optional' => bless( do{\(my $o = 0)}, 'Data::MessagePack::Boolean' ),
     #             'name' => 'hoge'
     #           },
     #           {
-    #             'type' => 'long',
+    #             'type' => 'integer',
     #             'optional' => $VAR1->[0]{'optional'},
     #             'name' => 'pos'
     #           }
