@@ -33,6 +33,8 @@ Norikra::Client - Client library for Norikra (https://github.com/tagomoris/norik
     #           ]
     #         ];
 
+    $client->see("query1"); # this doesn't delete events on server
+
     $client->sweep; # or $client->sweep("query_group_name");
 
     my $targets = $client->targets;
@@ -40,12 +42,12 @@ Norikra::Client - Client library for Norikra (https://github.com/tagomoris/norik
     $client->fields($targets->[0]);
     # $VAR1 = [
     #           {
-    #             'type' => 'integer',
+    #             'type' => 'long',
     #             'optional' => bless( do{\(my $o = 0)}, 'Data::MessagePack::Boolean' ),
     #             'name' => 'hoge'
     #           },
     #           {
-    #             'type' => 'integer',
+    #             'type' => 'long',
     #             'optional' => $VAR1->[0]{'optional'},
     #             'name' => 'pos'
     #           }

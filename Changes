@@ -2,6 +2,9 @@ Revision history for Perl extension Norikra-Client
 
 {{$NEXT}}
 
+0.03 2014-03-12T03:55:24Z
+    - add RPC API "see" for Norikra v0.1.4
+
 0.02 2013-10-18T09:29:23Z
     - fix API 'open' with new argument 'auto_field'
 
