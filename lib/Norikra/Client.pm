@@ -6,7 +6,7 @@ use warnings;
 use Data::MessagePack;
 use MessagePack::RPC::HTTP::Client;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 my $RPC_DEFAULT_PORT = 26571;
 
@@ -77,6 +77,11 @@ sub event {
     $self->client->call("event", $query_name);
 }
 
+sub see {
+    my ($self, $query_name) = @_;
+    $self->client->call("see", $query_name);
+}
+
 sub sweep {
     my ($self, $query_group) = @_;
     $self->client->call("sweep", $query_group);
@@ -121,6 +126,8 @@ Norikra::Client - Client library for Norikra (https://github.com/tagomoris/norik
     #             }
     #           ]
     #         ];
+
+    $client->see("query1"); # this doesn't delete events on server
 
     $client->sweep; # or $client->sweep("query_group_name");
 
